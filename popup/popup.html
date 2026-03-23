@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <h1>Vexcel</h1>
+      <p class="subtitle">Excel Shortcuts for Google Sheets</p>
+    </div>
+
+    <div class="toggle-row">
+      <span class="toggle-label">Enable Shortcuts</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="enableToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="status" id="statusText">Loading...</div>
+
+    <div class="divider"></div>
+
+    <div class="opt-in-section">
+      <h2>Optional Overrides</h2>
+      <p class="opt-in-desc">These override core Chrome shortcuts:</p>
+
+      <label class="opt-in-row">
+        <input type="checkbox" id="optCmdN" data-shortcut="cmd+n">
+        <span><strong>Cmd+N</strong> — New Sheet</span>
+      </label>
+
+      <label class="opt-in-row">
+        <input type="checkbox" id="optCmdT" data-shortcut="cmd+t">
+        <span><strong>Cmd+T</strong> — Alternating Colors</span>
+      </label>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="opt-in-section">
+      <h2>Diagnostics</h2>
+      <p class="opt-in-desc">Verbose action logs for debugging shortcut behavior:</p>
+
+      <label class="opt-in-row">
+        <input type="checkbox" id="debugModeToggle">
+        <span><strong>Debug Mode</strong> — Detailed console logs</span>
+      </label>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="quick-ref">
+      <h2>Performance</h2>
+      <div class="perf-summary" id="perfSummary">Speed stats load when Debug Mode is on.</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="quick-ref">
+      <h2>Quick Reference</h2>
+      <div class="ref-grid">
+        <div class="ref-item"><kbd>Option</kbd> tap <span>Ribbon accelerators</span></div>
+        <div class="ref-item"><kbd>Cmd+R</kbd> <span>Fill Right</span></div>
+        <div class="ref-item"><kbd>Cmd+D</kbd> <span>Fill Down</span></div>
+        <div class="ref-item"><kbd>Cmd+H</kbd> <span>Find & Replace</span></div>
+        <div class="ref-item"><kbd>Cmd+Shift+V</kbd> <span>Paste Values</span></div>
+        <div class="ref-item"><kbd>Cmd+1</kbd> <span>Format Cells</span></div>
+        <div class="ref-item"><kbd>F5</kbd> <span>Go To</span></div>
+        <div class="ref-item"><kbd>Ctrl+[</kbd> <span>Trace Precedents</span></div>
+        <div class="ref-item"><kbd>Ctrl+Opt+F</kbd> <span>Format Cycle</span></div>
+        <div class="ref-item"><kbd>Ctrl+Opt+C</kbd> <span>Font Color Cycle</span></div>
+        <div class="ref-item"><kbd>Ctrl+Opt+A</kbd> <span>Auto-Color Selection</span></div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

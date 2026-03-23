@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "Vexcel - Excel Shortcuts for Google Sheets",
+  "version": "1.0.0",
+  "description": "Brings Excel keyboard shortcuts to Google Sheets on Mac, including ribbon-style accelerator keys.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://docs.google.com/spreadsheets/*"],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/*"],
+      "js": [
+        "utils/key-utils.js",
+        "utils/dom-utils.js",
+        "utils/messaging.js",
+        "utils/selector-cache.js",
+        "utils/perf.js",
+        "sheets-dom/menu-navigator.js",
+        "sheets-dom/toolbar-actions.js",
+        "sheets-dom/cell-editor.js",
+        "sheets-dom/fill-engine.js",
+        "sheets-dom/trace-arrows.js",
+        "sheets-dom/context-menu.js",
+        "sheets-dom/color-picker.js",
+        "sheets-dom/finance-tools.js",
+        "sheets-dom/command-router.js",
+        "sheets-dom/fast-actions.js",
+        "shortcuts/categories/cell-operations.js",
+        "shortcuts/categories/formatting.js",
+        "shortcuts/categories/navigation.js",
+        "shortcuts/categories/selection.js",
+        "shortcuts/categories/editing.js",
+        "shortcuts/categories/row-column.js",
+        "shortcuts/categories/formula.js",
+        "shortcuts/categories/accelerator.js",
+        "shortcuts/shortcut-actions.js",
+        "shortcuts/shortcut-registry.js",
+        "accelerator/accelerator-overlay.js",
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
