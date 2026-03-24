@@ -1,0 +1,50 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F6F3EC"/>
+  <rect x="52" y="52" width="1096" height="526" rx="28" fill="#FFFDF8" stroke="#111111" stroke-width="2"/>
+
+  <g opacity="0.4">
+    <path d="M92 174H1108" stroke="#D9D2C6" stroke-width="2"/>
+    <path d="M92 246H1108" stroke="#D9D2C6" stroke-width="2"/>
+    <path d="M92 318H1108" stroke="#D9D2C6" stroke-width="2"/>
+    <path d="M92 390H1108" stroke="#D9D2C6" stroke-width="2"/>
+    <path d="M92 462H1108" stroke="#D9D2C6" stroke-width="2"/>
+    <path d="M92 534H1108" stroke="#D9D2C6" stroke-width="2"/>
+    <path d="M334 92V538" stroke="#E5DED2" stroke-width="2"/>
+    <path d="M458 92V538" stroke="#E5DED2" stroke-width="2"/>
+    <path d="M582 92V538" stroke="#E5DED2" stroke-width="2"/>
+    <path d="M706 92V538" stroke="#E5DED2" stroke-width="2"/>
+    <path d="M830 92V538" stroke="#E5DED2" stroke-width="2"/>
+    <path d="M954 92V538" stroke="#E5DED2" stroke-width="2"/>
+  </g>
+
+  <rect x="92" y="92" width="420" height="446" rx="24" fill="#111111"/>
+  <path d="M302 154L435 404H169L302 154Z" fill="#FFFFFF"/>
+  <text x="132" y="456" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="2">VEXCEL</text>
+  <text x="132" y="492" fill="#B8B8B8" font-family="Arial, Helvetica, sans-serif" font-size="16">Excel shortcuts for Google Sheets on Mac</text>
+
+  <g>
+    <text x="574" y="176" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">Excel muscle memory,</text>
+    <text x="574" y="236" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">without leaving Sheets.</text>
+    <text x="574" y="298" fill="#4E4A43" font-family="Arial, Helvetica, sans-serif" font-size="24">
+      Fast fills, accelerator overlays, finance-friendly formatting,
+    </text>
+    <text x="574" y="332" fill="#4E4A43" font-family="Arial, Helvetica, sans-serif" font-size="24">
+      and Chrome overrides that behave the way spreadsheet power users expect.
+    </text>
+  </g>
+
+  <g>
+    <rect x="574" y="390" width="146" height="58" rx="14" fill="#E8F4EA" stroke="#2E6E3E" stroke-width="2"/>
+    <text x="609" y="426" fill="#2E6E3E" font-family="Courier New, monospace" font-size="28" font-weight="700">Cmd+D</text>
+    <rect x="738" y="390" width="146" height="58" rx="14" fill="#E8F4EA" stroke="#2E6E3E" stroke-width="2"/>
+    <text x="773" y="426" fill="#2E6E3E" font-family="Courier New, monospace" font-size="28" font-weight="700">Cmd+R</text>
+    <rect x="902" y="390" width="206" height="58" rx="14" fill="#F2EFE8" stroke="#111111" stroke-width="2"/>
+    <text x="935" y="426" fill="#111111" font-family="Courier New, monospace" font-size="26" font-weight="700">Option</text>
+  </g>
+
+  <g>
+    <rect x="574" y="486" width="252" height="20" rx="10" fill="#111111"/>
+    <rect x="574" y="518" width="332" height="20" rx="10" fill="#2E6E3E"/>
+    <rect x="574" y="550" width="198" height="20" rx="10" fill="#B9B0A1"/>
+  </g>
+</svg>
