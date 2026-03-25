@@ -40,6 +40,33 @@ The repo is especially focused on:
 5. Select this folder: `Vexcel`.
 6. Open Google Sheets and start using the shortcuts.
 
+## Direct Codex <> Google Sheets Workflow
+
+This repo now includes a direct Google Sheets bridge so Codex can edit live Sheets ranges without exporting `.xlsx` files back and forth.
+
+Use it for workflows like:
+
+- read formulas from a live Google Sheet into Codex
+- update a model range in place with `USER_ENTERED` formulas
+- append raw data rows directly to a sheet
+- clear or rewrite scratch tabs without download/upload loops
+
+Core files:
+
+- `./scripts/gsheets`
+- `./scripts/gsheets_cli.py`
+- `./scripts/requirements-gsheets.txt`
+- `./about/codex-google-sheets.md`
+
+Typical setup:
+
+1. Install the Python dependencies in a repo venv.
+2. Configure either a service account or an OAuth desktop client.
+3. Run `./scripts/gsheets auth` once if you are using OAuth.
+4. Add friendly spreadsheet aliases in `vexcel-sheets.json`.
+
+Then Codex can work directly against a live spreadsheet instead of round-tripping through local files.
+
 ## Recommended Workflows
 
 ### Fill Faster
@@ -67,6 +94,7 @@ The repo is especially focused on:
 - [`about/architecture.md`](./about/architecture.md): runtime and execution model
 - [`about/shortcuts.md`](./about/shortcuts.md): shortcut inventory
 - [`about/file-map.md`](./about/file-map.md): folder-by-folder guide
+- [`about/codex-google-sheets.md`](./about/codex-google-sheets.md): direct Codex-to-Sheets bridge
 
 ## Tech Notes
 

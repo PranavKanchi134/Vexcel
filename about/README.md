@@ -21,6 +21,7 @@ The extension does four main things:
 - Read [`about/architecture.md`](/Users/pranavkanchi/Desktop/projects/coding/Vexcel/about/architecture.md) for the runtime flow.
 - Read [`about/shortcuts.md`](/Users/pranavkanchi/Desktop/projects/coding/Vexcel/about/shortcuts.md) for the supported shortcut inventory.
 - Read [`about/file-map.md`](/Users/pranavkanchi/Desktop/projects/coding/Vexcel/about/file-map.md) for a folder-by-folder guide.
+- Read [`about/codex-google-sheets.md`](/Users/pranavkanchi/Desktop/projects/coding/Vexcel/about/codex-google-sheets.md) for the direct Codex-to-Google-Sheets workflow.
 
 ## Core Entry Points
 

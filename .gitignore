@@ -1,2 +1,6 @@
 .DS_Store
 .codex/
+.venv/
+.secrets/
+__pycache__/
+vexcel-sheets.json
