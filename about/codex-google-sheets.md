@@ -18,6 +18,9 @@ you can give Codex a sheet alias or spreadsheet URL and let it read or update ra
 - `scripts/gsheets_cli.py`: main Python CLI
 - `scripts/gsheets`: convenience wrapper that prefers the repo `.venv`
 - `scripts/requirements-gsheets.txt`: Python dependencies
+- `scripts/gsheets_sync_server.py`: local sync bridge used by the extension popup
+- `scripts/gsheets-sync-server`: convenience launcher for the sync server
+- `scripts/copy-path`: copies a generated workbook path to the macOS clipboard
 - `vexcel-sheets.example.json`: alias config example
 
 ## One-Time Setup
@@ -106,6 +109,39 @@ Clear a range:
 ```bash
 ./scripts/gsheets clear --spreadsheet finance-model --range "Scratch!A1:Z100"
 ```
+
+## Popup Sync Button
+
+The Vexcel popup now includes **Sync Active Sheet From Clipboard**.
+
+Workflow:
+
+1. Generate or update an `.xlsx` locally.
+2. Copy its path to the clipboard:
+
+```bash
+./scripts/copy-path /absolute/path/to/model.xlsx
+```
+
+3. Start the local sync server:
+
+```bash
+./scripts/gsheets-sync-server
+```
+
+4. Open the destination Google Sheet and select the target tab.
+5. Open the Vexcel popup and press **Sync Active Sheet From Clipboard**.
+
+What it does:
+
+- reads the clipboard path
+- detects the current spreadsheet and active sheet tab from the extension
+- loads the workbook locally
+- chooses a source sheet by matching the active tab title when possible, otherwise the workbook's active sheet
+- clears the active Google Sheets tab
+- writes the workbook values and formulas back into that tab with `USER_ENTERED`
+
+This is not the browser's native import dialog. It is a local sync bridge that is more reliable for Codex-driven iteration because it avoids file-pickers and upload prompts.
 
 ## Notes
 

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: ./scripts/copy-path /absolute/or/relative/file.xlsx" >&2
+  exit 1
+fi
+
+TARGET_PATH="$1"
+ABS_PATH="$(cd "$(dirname "$TARGET_PATH")" && pwd)/$(basename "$TARGET_PATH")"
+printf '%s' "$ABS_PATH" | pbcopy
+echo "Copied path to clipboard: $ABS_PATH"

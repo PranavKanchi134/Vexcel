@@ -97,6 +97,12 @@
       optInShortcuts = settings.optInShortcuts || {};
     });
 
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+      if (!isTopFrame) return;
+      if (!message || message.type !== 'GET_SHEET_CONTEXT') return;
+      sendResponse(getSheetContext());
+    });
+
     console.log('[Vexcel] Content script initialized');
   }
 
@@ -318,6 +324,34 @@
       toastTimer = setTimeout(() => { toastEl.style.opacity = '0'; }, 1200);
     } catch (e) {
       // Cross-origin — can't access top frame, skip toast silently
+    }
+  }
+
+  function getSheetContext() {
+    try {
+      const href = window.top.location.href || window.location.href || '';
+      const match = href.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+      const spreadsheetId = match ? match[1] : '';
+      const activeTab = VexcelDom.getActiveSheetTab();
+      const sheetTitle = activeTab
+        ? (activeTab.getAttribute('data-tooltip') || activeTab.getAttribute('aria-label') || activeTab.textContent || '').trim()
+        : '';
+
+      if (!spreadsheetId || !sheetTitle) {
+        return { ok: false, reason: 'Could not detect spreadsheet ID or active sheet title' };
+      }
+
+      return {
+        ok: true,
+        spreadsheetId,
+        sheetTitle,
+        url: href
+      };
+    } catch (error) {
+      return {
+        ok: false,
+        reason: error.message || 'context lookup failed'
+      };
     }
   }
 

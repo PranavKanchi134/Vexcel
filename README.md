@@ -67,6 +67,16 @@ Typical setup:
 
 Then Codex can work directly against a live spreadsheet instead of round-tripping through local files.
 
+There is also a popup-driven sync flow for workbook iteration:
+
+1. generate or update an `.xlsx` locally
+2. copy its path to the clipboard with `./scripts/copy-path ...`
+3. start `./scripts/gsheets-sync-server`
+4. open the destination tab in Google Sheets
+5. press **Sync Active Sheet From Clipboard** in the Vexcel popup
+
+That replaces the active Google Sheets tab with the workbook sheet data without making you manually export, upload, and re-import every iteration.
+
 ## Recommended Workflows
 
 ### Fill Faster

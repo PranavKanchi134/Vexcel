@@ -3,8 +3,12 @@
   "name": "Vexcel - Excel Shortcuts for Google Sheets",
   "version": "1.0.0",
   "description": "Brings Excel keyboard shortcuts to Google Sheets on Mac, including ribbon-style accelerator keys.",
-  "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://docs.google.com/spreadsheets/*"],
+  "permissions": ["storage", "tabs", "clipboardRead"],
+  "host_permissions": [
+    "https://docs.google.com/spreadsheets/*",
+    "http://127.0.0.1:8765/*",
+    "http://localhost:8765/*"
+  ],
   "background": {
     "service_worker": "service-worker.js"
   },
